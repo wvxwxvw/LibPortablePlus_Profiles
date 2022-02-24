@@ -7,6 +7,11 @@
 [Скачать](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/Firefox.91.ESR.LPP.profile-tstex_220219.7z)  -  [Почитать](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/tstex-Readme.md)  -  [Посмотреть](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/tstex-screen.md)  
   
 ===========================================================================  
+
+Большая часть кнопок выведенных на панели имеют подробные подсказки.
+Наведите курсор на интересующую вас кнопку и читайте.
+
+===========================================================================  
   
 ### Отключить появление главного меню по Alt  
   
