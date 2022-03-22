@@ -1,10 +1,10 @@
 ## Профили для сборки LibPortablePlus версии 21.10.02+
 
 ### Профиль Native Tabs Fx
-[Скачать](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/Firefox.91.ESR.LPP.profile-ntfex_220322.7z)  -  [Почитать](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/ntfex-Readme.md)  -  [Посмотреть](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/ntfex-screen.md)  
+[Скачать](https://github.com/wvxwxvw/LibPortablePlus_Profiles/raw/main/Firefox.91.ESR.LPP.profile-ntfex_220322.7z)  -  [Почитать](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/ntfex-Readme.md)  -  [Посмотреть](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/ntfex-screen.md)  
   
 ### Профиль Tree Style Tab
-[Скачать](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/Firefox.91.ESR.LPP.profile-tstex_220322.7z)  -  [Почитать](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/tstex-Readme.md)  -  [Посмотреть](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/tstex-screen.md)  
+[Скачать](https://github.com/wvxwxvw/LibPortablePlus_Profiles/raw/main/Firefox.91.ESR.LPP.profile-tstex_220322.7z)  -  [Почитать](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/tstex-Readme.md)  -  [Посмотреть](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/tstex-screen.md)  
   
 ===========================================================================  
 
