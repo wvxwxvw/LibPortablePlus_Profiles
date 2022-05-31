@@ -1,6 +1,7 @@
 ## Профили для сборки LibPortablePlus версии 21.10.02
-Если захотите использовать с более новой версией сборки, то следует взять некоторые взаимосуществующие компоненты из сборки, а не из профиля, а именно:  
-`user.js` и `QuickToggleAboutConfig_Damby_ucf.js`
+Если захотите использовать с более новой версией сборки 91 версии, то следует взять некоторые взаимосуществующие компоненты из сборки, а не из профиля, а именно:  
+`user.js` и `QuickToggleAboutConfig_Damby_ucf.js`  
+В версиях Firefox от 100 корректно работать точно не будет.
 
 ### Профиль Native Tabs Fx
 [Скачать](https://github.com/wvxwxvw/LibPortablePlus_Profiles/raw/main/Firefox.91.ESR.LPP.profile-ntfex_220322.7z)  -  [Почитать](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/ntfex-Readme.md)  -  [Посмотреть](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/ntfex-screen.md)  
