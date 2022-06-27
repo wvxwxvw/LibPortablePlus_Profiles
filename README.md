@@ -4,7 +4,8 @@
 ##### !!! ТОЛЬКО ДЛЯ СОЗДАНИЯ НОВОГО ПРОФИЛЯ
 ##### !!! ТОЛЬКО ДЛЯ 91 ESR, выше могут не все стили работать
   
-[Скачать](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/Firefox.91.ESR.LPP.profile.220627.7z) | [Скрины с TST](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/tstex-screen.md) | [Скрины без TST](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/ntfex-screen.md) | Скрины старые, но вид не сильно поменялся.
+[Скачать](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/Firefox.91.ESR.LPP.profile.220627.7z) | [Скрины с TST](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/tstex-screen.md) | [Скрины без TST](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/ntfex-screen.md) | Скрины старые, но вид не сильно поменялся.  
+Сочинение описания занимает массу времени и видимо оно нафик ни кому не нужно, поэтому описание и перечни не полные, что вспомнил, то записал.
   
 ### Начало:
 
