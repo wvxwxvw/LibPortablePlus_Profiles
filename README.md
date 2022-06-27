@@ -1,219 +1,425 @@
-## Профили для сборки LibPortablePlus версии 21.10.02
-Если захотите использовать с более новой версией сборки 91 версии, то следует взять некоторые взаимосуществующие компоненты из сборки, а не из профиля, а именно:  
-`user.js` и `QuickToggleAboutConfig_Damby_ucf.js`  
-В версиях Firefox от 100 корректно работать точно не будет.  
-  
-В ближайшее время (как лень пройдет) выложу новый профиль под текущую версию сборки.
 
-### Профиль Native Tabs Fx
-[Скачать](https://github.com/wvxwxvw/LibPortablePlus_Profiles/raw/main/Firefox.91.ESR.LPP.profile-ntfex_220322.7z)  -  [Почитать](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/ntfex-Readme.md)  -  [Посмотреть](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/ntfex-screen.md)  
-  
-### Профиль Tree Style Tab
-[Скачать](https://github.com/wvxwxvw/LibPortablePlus_Profiles/raw/main/Firefox.91.ESR.LPP.profile-tstex_220322.7z)  -  [Почитать](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/tstex-Readme.md)  -  [Посмотреть](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/tstex-screen.md)  
-  
-===========================================================================  
+## Минимально настроенный профиль для сборки LibPortablePlus версии 22.06.26+
 
-Большая часть кнопок выведенных на панели имеют подробные подсказки.  
-Наведите курсор на интересующую вас кнопку и читайте.
-
-===========================================================================  
-
-### NoScript
-Новый стиль, намного лучше чем старый, да и старый уже не работает в текущих версиях.
-Обратите внимание, что в старом стиле в `userContent_dark_addons.css` NoScript занимает три секции, следует заменить их все, а в новом стиле во всех трех секциях прописать ваш UUID NoScript. Всего пять раз.
+##### !!! ТОЛЬКО ДЛЯ СОЗДАНИЯ НОВОГО ПРОФИЛЯ
+##### !!! ТОЛЬКО ДЛЯ 91 ESR, выше могут не все стили работать
   
-```
-/*------ NOSCRIPT ADDON SETTINGS AND PROMPT PAGE ------*/
-@-moz-document url-prefix(moz-extension://uuid/ui/options.html),
-url-prefix(moz-extension://uuid/ui/prompt.html),
-url-prefix(moz-extension://uuid/ui/siteInfo.html) {
-h1 {
-    color: #ddd !important;
-}
-.flextabs__toggle[aria-expanded="true"] {
-    background: #2A2A36 !important;
-    color: #ddd !important;
-}
-.flextabs__toggle[aria-expanded="false"] {
-    background: #333333 !important;
-    color: #aaa !important;
-}
-button:not(.flextabs__toggle) {
-    color: #ddd !important;
-    border: none !important;
-    background: #333 !important;
-}
-.buttons button:hover {
-    background: #3F3E47 !important;
-}
-#presets :is(.presets input.preset + label, .customizer-controls) {
-    box-shadow: 0 0 .2em transparent !important
-}
-.customizing input.preset:checked {
-    --extra-preset-width: 0.1em !important;
-    color: #fff !important;
-    border-bottom: none !important;
-}
-.customizer-controls {
-    margin: -1px 0 0 0!important;
-}
-}
-/* ---------- NOSCRIPT ADDON POPUP ------*/
-@-moz-document url-prefix(moz-extension://uuid/ui/popup.html) {
-#message {
-    --hilite-color: #777777 !important;
-    background-color: #282828 !important;
-}
-body {
-    margin: 0 !important;
-    padding: 0 !important;
-}
-/* Верхняя панель */
-#top {
-    border-bottom: 1px solid #555 !important;
-    height: 2.4em !important;
-    padding: 0 0 0 0 !important;
-}
-#top .icon {
-    width: 2em !important;
-    height: 2em !important;
-}
-:not([data-theme="light"]) :is(input.preset, .icon) {
-    filter: none !important;
-}
-}
-/* ---------- NOSCRIPT GLOBAL ------*/
-@-moz-document url-prefix(moz-extension://uuid/ui/) {
-/* Пресеты */
-.presets input.preset {
-    width: 1.6em !important;
-    height: 1.6em !important;
-    margin: 0 0 0.14em 0.3em !important;
-    background: rgba(30,30,30,0.2) !important; /* шапито */
-    box-shadow: inset 0 1px 3px #000 !important;
-    border-radius: 0 0 0 0 !important;
-}
-.presets input.preset:checked {
-    background-color: rgba(50,50,50,0.50) !important;
-    min-width: calc(var(--preset-label-width) + var(--line-size) * 1.5 + var(--extra-preset-width)) !important;
-}
-.presets input.preset:checked + label.preset {
-    border-radius: 0 !important;
-}
-input.preset:checked ~ input.temp {
-    height: 1.3em !important;
-    top: 0.08em !important;
-    right: 0.01em !important;
-    margin-right: 2px !important;
-    background-color: none !important;
-}
-.preset label.preset {
-    min-width: calc(var(--preset-label-width) + var(--line-size) * 0 + var(--extra-preset-width)) !important;
-    padding: 0.1em 0 0 2.3em !important;
-    margin: 0 0.4em 0 0.4em !important;
-    color: #fff !important;
-    text-shadow: #000 !important;
-    font-size: 0.9em !important;
-}
-/* Контуры пресетов */
-.preset.DEFAULT input.preset {
-    border: 1px solid #666 !important;
-}
-.preset.T_TRUSTED input.preset {
-    border: 1px solid yellow !important;
-}
-.preset.TRUSTED input.preset {
-    border: 1px solid green !important;
-}
-.preset.UNTRUSTED input.preset {
-    border: 1px solid #FF3333!important;
-}
-.preset.CUSTOM input.preset {
-    border: 1px solid orange !important;
-}
-/***/
-.preset.DEFAULT input.preset:hover {
-    border-color: #0084ff !important;
-}
-.preset.T_TRUSTED input.preset:hover {
-    box-shadow: inset 0 0 2px yellow !important;
-    border-color: yellow !important;
-}
-.preset.TRUSTED input.preset:hover {
-    box-shadow: inset 0 0 2px green !important;
-    border-color: green !important;
-}
-.preset.UNTRUSTED input.preset:hover {
-    box-shadow: inset 0 0 2px #FF3333 !important;
-    border-color: #FF3333 !important;
-}
-.preset.CUSTOM input.preset:hover {
-    box-shadow: inset 0 0 2px orange !important;
-    border-color: orange !important;
-}
-/* Пресет ИНДИВИДУАЛЬНАЯ */
-.customizer fieldset {
-    padding: 4px 2px 0px 8px !important;
-    background-color: #333333 !important;
-}
-span.cap.needed {
-    background-color: rgba(255,165,0,0.3) !important;
-}
-.customizer-controls fieldset {
-    outline: 1px solid orange !important;
-}
-.capsContext select {
-    height: 2.2em !important;
-    font-size: 0.9em !important;
-}
-.capsContext button.reset {
-    height: 2.2em !important;
-    font-size: 0.9em !important;
-}
-button {
-    background-color: transparent !important;
-    color: #ddd !important;
-}
-/* URL сайтов */
-#https-only {
-    margin-top: 0.1em !important;
-}
-#sites .sites .site td.url span {
-    color: #ddd !important;
-}
-span {
-    color: #ddd !important;
-}
-.sites > tr.site:first-of-type:not(:hover) {
-    background: #333 !important;
-}
-.sites > tr.site:nth-of-type(2n):not(:hover) {
-    background-color: #2B2A27 !important;
-}
-.sites > tr.site:nth-of-type(2n+1):not(:hover) {
-    background: #333 !important;
-}
-.sites tr:hover {
-    background: rgba(150,150,150,0.2) !important;
-}
-/* Checkbox coloring */
-input[type="checkbox"] {
-    -moz-appearance: none !important;
-    border: 1px solid #666 !important;
-    background-color: #3F3E47 !important;
-    transition: color 0.3s;
-    min-width: 18px !important;
-    min-height: 18px !important;
-    max-width: 18px !important;
-    max-height: 18px !important;
-    margin-bottom: 0 !important;
-}
-input[type="checkbox"]:not([disabled]):hover {
-    box-shadow: 0 0 4px #0084ff !important;
-    border-color: #0084ff !important;
-}
-input[type="checkbox"]:not(.temp):checked {
-    background: #3F3E47 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important;
-}
-}
-```
+[Скачать](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/Firefox.91.ESR.LPP.profile.220627.7z) | [Скрины с TST](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/tstex-screen.md) | [Скрины без TST](https://github.com/wvxwxvw/LibPortablePlus_Profiles/blob/main/ntfex-screen.md) | Скрины старые, но вид не сильно поменялся.
+  
+### Начало:
+
+     Подготовьте сборку по инструкции к ней
+     Киньте папку profile в корень сборки
+     Согласитесь на перезапись (без исключений)
+     Запустите браузер
+     Перезагрузите браузер (например, кнопкой в левом нижнем углу окна)
+     Тему включайте любую (в темных больше интересного)
+  
+     Если хотите пользоваться TST то:
+        Включите все отключенные расширения
+        Раскомментируйте 18-ю строку в файле
+        .\profile\chrome\user_chrome_files\custom_scripts\custom_js\ToggleNativeTabs_ucf.js
+  
+     Если не нужна очистка при закрытии, переопределите это в меню ЛКМ
+     кнопки Quick Toggle Settings, верхняя синяя кнопка на панели слева
+  
+     При использовании светлых тем можете применить в TST >> Настройки >>
+     Расширенные настройки - файл стиля из папки
+     profile-tstex\maintenance\AddonSettings\treestyletab-light.css,
+     а когда ослепнете от белезны :-), то включить обратно темную тему и
+     восстановить treestyletab-dark.css
+  
+     Если хотите иконизировать все контекстные и выпадающие меню, то киньте
+     папку "chrome", из архива "icons_in_menu.7z", в профиль, с перезаписью
+     Если профиль до этого уже запускался, то потребуется перезагрузить браузер
+     с очисткой кэша загрузки (например, ПКМ по кнопке в левом нижнем углу окна)
+  
+##### Отличие батников профиля от батников сборки:
+      Добавлена очистка баз предустановленного uBlock
+      Добавлена очистка базы истории предустановленного TextArea Cache
+      Добавлена очистка базы скрипта истории поисков по странице
+      Добавлена очистка браузерных баз, которые временами разбухают до десятков
+      и сотен Мб, но не содержат ничего критически важного.
+
+##### Переезд со старого профиля:
+
+     Свои компоненты из старого профиля кидайте уже после описанных выше
+     манипуляций, но не перезаписывайте изначально присутствующие файлы,
+     иначе сломаете и то и это.
+  
+     Памятка по файлам профиля:
+          favicons.sqlite      - иконки закладок и журнала посещений
+          key*.db              - ключ шифрования паролей (актуален с большей цифрой)
+          logins.json          - сохраненные пароли
+          persdict.dat         - слова исключения, добавленные вами в словарь
+          places.sqlite        - закладки и журнал посещений
+          search.json.mozlz4   - ваши поисковые системы, если ранее настраивали
+                                 (в профиле сейчас уже немного настроенный файл)
+  
+     Не пытайтесь перетащить свои старые расширения и их настройки, это так не
+     работает. Устанавливайте и настраивайте их стандартным способом.
+  
+  
+### СОСТАВ:
+  
+#### Некоторые функции:
+  
+       ПКМ по щиту в адресной строке        - информация о странице
+       ПКМ по иконке рядом                  - разрешения для сайта.
+                                              на тяжелых сайтах, не скрипт работает
+                                              с задержкой, а сам Firefox !!!
+       ПКМ по дропмаркеру в адресной строке - копировать адрес текущей страницы
+       ПКМ по звездочке в адресной строке   - открывает окно управления куками
+       ПКМ по индикатору памяти             - диспетчер задач
+       Ctrl+ПКМ по индикатору памяти        - диспетчер процессов
+       ПКМ по кнопке перезагрузки страницы  - перезагрузка страницы минуя кэш
+       ПКМ по кнопке Undo Closed Tabs       - открывает последнюю закрытую вкладку
+       Shift+ЛКМ по кнопке Sidebar Tabs     - выбор переключения ST над (при наведении)
+                                              или рядом со страницей
+       ПКМ по кнопке загрузок               - открытие вкладки загрузок в Sidebar Tabs
+       Подсказка звездочки показывает       - папку последней сохраненной закладки
+  
+       Также, многие кнопки имеют нескользо способов вызова с разными функциями,
+       читайте их подсказки
+  
+       Индикация цветом заголовков вкладок:
+         красный курсив                       - выгружена
+         оранжевый курсив                     - не прочитана
+         белый                                - обычная
+         жирный                               - текущая
+         светло голубой (только TST)          - последняя активная
+  
+#### Темы:
+  
+       Full Theme                   - набор стилей, работает под любой из имеющихся
+                                      тем, в том числе и из под встроенных
+       Dark Cold Violet theme exp   - альтернативные цвета +
+       Dark Warm Rose theme exp     - альтернативные цвета +
+  
+#### Расширения:
+
+#####   Add Last Active Class To Tab
+   
+            - добавляет для TST класс "последняя активная вкладка".
+
+#####   Add Toolbar Buttons
+   
+            - дополнительные кнопки, некоторые вытащены на панели,
+              остальные см. в настройках панелей (Персонализации).
+              информация о кнопках в их подсказках (tooltips)!
+
+#####   Clear URLs
+   
+            - удаляет мусор из открываемых и копируемых ссылок
+              интерфес настроек частично не работает уже не первый год,
+              но автору насрать, он им на Chrome пользуется, а там все работает.
+              настройки по умолчанию вполне оптимальны, поставил и забыл.
+
+#####   Link Properties Plus WE
+   
+            - позволяет увидеть расширенные свойства ссылок:
+              размер файла по ссылке, дата последнего изменения на
+              сервере, статус ответа, заголовок HTTP, прямая ссылка,
+              реферер и т.п., а так же загрузить файл как есть или
+              по прямой ссылке. размер файла и дата изменения
+              отображаются только если сервер предоставляет это,
+              прямая ссылка - только для файлов и если она есть.
+
+#####   Link Text and Location Copier (переведен)
+   
+            - позволяет копировать URL и заголовок ссылки / страницы
+              или URL страницы и выделенный текст в различных форматах,
+              до кучи, удаляет utm мусор из копируемых адресов
+
+#####   New Tab Page
+   
+            - домашняя страница и новая вкладка
+
+#####   NoScript
+   
+            - блокировщик скриптов. (см. Заметки)
+
+#####   Open Link with New Tab
+   
+            - заставляет браузер по умолчанию открывать внешние ссылки
+              с веб-страниц как задано в настройках аддона - логично
+              настроить открытие всех внешних ссылок в новой вкладке.
+
+#####   Popup window
+   
+            - позволяет отсоединять текущую вкладку от основного окна или
+              открывать выбранную ссылку в новом, при этом открытое окно не
+              будет иметь каких либо панелей инструментов.
+              и присоединять открытое таким способом окно к основному окну,
+              если включен соответствующий пункт контекстного меню.
+
+#####   Selection Context Search (переведен)
+   
+            - поиск в любом добавленном поисковике
+            - поиск на любом сайте в выбранном поисковике
+            - из контекстного меню вкладок, страниц и ссылок можно передавать
+              адрес страницы/домена (переводчикам, серверам статистики и т.п.)
+            - из контекстного меню изображений можно передавать адрес картинки
+              (для поиска похожих изображений)
+            - открытие выделенных текстовых ссылок
+            - всплывающая панель при выделении текста или контекстное меню
+            - раздельные контекстные меню для ссылок, изображений, вкладок,
+              страниц или фреймов
+            - имеется возможность добавить ранее сохраненные поисковики из
+              закладок или все сохраненные поисковики из отдельной папки закладок
+            - есть функция автокопирования выделенного текста в буфер обмена,
+              но работает она кое-как
+            - отсутствует реклама, попрошайничество и левые сетевые функции
+
+#####   Scriptlet Doctor
+   
+            - нужен для подписки uBlock RU AdList: Counters,
+              RU AdList JS/CSS Fixes в этом случае не нужны
+
+#####   Simple Translate  
+   
+            - переводчик, со множеством способов получить перевод,
+              сейчас перевод выделенного текста по Alt+Q во всплывающем окне.
+
+#####   Smart HTTS
+   
+            - принуждает Firefox запрашивать сайты по HTTPS протоколу, а в
+              случае ошибки возвращаться на HTTP.
+              это оптимальный вариант контроля HTTPS, без массы раздражающих
+              запросов пользователю (как в HTTPS only), без гигантских баз
+              данных, и постоянных соединений с кем-то (как у конкурента).
+              имеется черный и белый списки, а также приватный и
+              строгий режимы.
+              настройки по умолчанию вполне оптимальны, поставил и забыл.
+
+#####   Tab Unloader for Tree Style Tab
+   
+           - команды выгрузки вкладкок для TST
+           - работает и с нативными вкладками, но не полнофункционально
+
+#####   Temporary_Containers (переведен)
+   
+           - настраиваемые временные контейнеры.
+           - контейнеры изолируют данные сайтов (cookie, кэш и др.) от других
+             вкладок, сайтов и сookies, а также позволяют заходить на один сайт
+             под несколькими аккаунтами.
+
+#####   TextArea Cache
+   
+            - сохранение написанного в многострочных полях для последующего
+              использования или для восстановления в случае случайной
+              перезагрузки браузера или ОС.
+              можно настроить автоочистку базы по времени или использовать
+              батники, в них база этого расширения уже прописана.
+
+#####   Tree Style Tab
+   
+            - дерево вкладок в боковой панели.
+
+#####   TST More Tree Commands
+   
+            - дополнительные команды для дерева вкладк
+
+#####   TST Open Bookmarks as Partial Tree
+   
+            - дополнительные команды для закладок вообще и в частности
+              созданных из TST.
+
+#####   uBlock Origin
+   
+            - блокировщик рекламы (подписки настроены)
+
+#####   Undo Closed Tabs Button_REV (переведен, заменены значки и т.п.)
+   
+            - меню со списком закрытых вкладок, не где-то там в подменю,
+              а на нулевом уровне.
+
+#### Скрипты UCF (некоторые):
+
+#####   about:config old
+   
+            - позволяет открывать `about:config` в старом виде, с возможностью
+              сортировки параметров по состоянию, типу или значению.
+	      доступен по адресу about:cfg или через кнопку. см. ниже.
+#####   Add History Findbar
+   
+            - добавляет на панель поиска по странице дропмаркер с меню
+              истории поисков (база удаляется батниками)
+#####   FavIcon In URL-bar
+   
+            - иконка сайта в адресной строке
+#####   Linkifies Location Bar
+   
+            - кликабельная фрагментация пути в строке адреса. (см. Заметки)
+#####   Mem Indicator
+   
+            - индикатор памяти в адресной строке
+#####   Memory Minimization
+   
+            - функция очистки памяти для индикатора памяти
+#####   Open about:config
+   
+            - отдельная кнопка открытия `about:config`, позволяет открывать
+	      выделенный на странице текст или текст из буфера обмена в
+	      качестве поискового запроса в современном `about:config` и в 
+	      старом `about:cfg` (во вкладке или окне). см. подсказки кнопки.
+#####   Open Coockies RClick Star
+   
+            - см. "Некоторые функции"
+#####   Open Page Info RClick TracPotect
+   
+            - см. "Некоторые функции"
+#####   Open Permissions RClick IdentBox
+   
+            - см. "Некоторые функции"
+#####   OpenSidebarContextMenu
+   
+            - пункт контекстного меню закладок "перейти в папку выбранной
+              закладки" в конт.меню закладок сайдбара (нужен при поиске)
+#####   Quick Toggle About Config Settings
+   
+            - меню быстрого переключения заданных в скрипте параметров
+              about:config
+#####   Refresh Not From Cache
+   
+            - см. "Некоторые функции"
+#####   Set Attribute Unread
+   
+            - индикация "прочитанных / непрочитанных / выгруженных /
+              загружаемых" вкладок цветом и стилем текста заголовков
+#####   Show Parent Folder
+   
+            - добавляет столбец "Папка" в обзор закладок, в библиотеке
+              (удобство при поиске)
+#####   Undo Bookmarks Context Menu
+   
+            - отмена удаления закладки в контекстном меню закладок
+#####   URL-bar History Dropmarker
+   
+            - дропмаркер в адресной строке, см. "Некоторые функции"
+#####   ViewImageInTab
+   
+            - пункт меню "Открыть изображение", открывает его в новой активной
+#####   Очистить историю
+   
+            - очищает историю, кэш, куки без дурацких вопросов,
+              находится в `custom_script.js`, можете в нем настроить область и
+              диапазон очистки, сейчас очищает все, т.е. сбрасывает сессию.
+              может заодно закрывать все открытые вкладки.
+#####   Поиск в адресной строке одним кликом
+   
+            - в поисковике по умолчанию (по стрелке) или выбранном (по значку)
+#####   Еще что-то ...
+
+#### Стили userChrome/userContent (некоторые):
+
+#####   About-Addons
+   
+            - стиль для страницы about:addons
+#####   BackForward Large
+   
+            - графические кнопки навигации,
+              можно выбрать, для этого пропишите в userChrome.css
+              имя файла на выбор из `...\profile\chrome\png\`
+#####   Bookmarks Panel
+   
+            - внешний вид панели закладок,
+              на верхнем уровне у папок и закладок скрыты заголовки, а папкам
+              добавлены подсказки (тултипы)
+#####   Dark Additional Windows
+   
+            - раскрашивает темным, в темных темах, дополнительные окна Firefox
+#####   Dark Addons
+   
+            - раскрашивает темным, в темных темах, окна/страницы некоторых
+              дополнений
+#####   Downloads
+   
+            - стиль для списков загрузок
+#####   Floating Findbar On Top
+   
+            - аккуратная панель поиска по странице
+#####   Library
+   
+            - стиль для библиотек (в конце .css можно включить анимацию)
+#####   Megabar Styler Two-Row Flex Layout
+   
+            - настройка выпадающего меню адресной строки и двустрочные
+              результаты поиска в этом меню
+#####   Other Panels
+   
+            - стиль для дополнительных панелей панели навигации
+#####   Set Attribute Unread style
+   
+            - стиль для скрипта `Set Attribute Unread`
+#####   SimpleMenuWizard
+   
+            - скрытие и изменение пунктов всяких меню
+#####   Несколько внешних и внутренних стилей TST  
+   
+            - стили оформления TST (см. папку "chrome" и
+              "Расширенные настройки" TST)  
+#####   Еще что-то ...
+  
+  
+### ЗАМЕТКИ:
+  
+#####   Если не пользовались ранее NoScript, то можете включить в настройках параметр:
+  
+      "Временно установить «Доверенные» для сайтов верхнего уровня"
+  
+      Это позволит уделять меньше внимания расширению при посещении новых сайтов.
+  
+#####   Если для работоспособности сайта требуются сторонние скрипты, то временно разрешать их придется самостоятельно, по очереди давая сторонним скриптам временные разрешения, потом, для часто посещаемых сайтов, можно добавить нужным скриптам постоянные разрешения. Или можно воспользоваться кнопкой в меню расширения "Установить «Врем. ДОВЕРЕННЫЕ» для всех элементов страницы". Такова цена за приватность и чистоту страниц. В меню заблокированных скриптов адреса дублируются, например, sample.com и https://sample.com - это позволяет вам добавлять разрешения только для https протокола, если так надо, но не все сайты написаны как положено и многие сайты работают по фейк-https, т.е. сам сайт отображается как https, а на самом деле все или часть подресурсов у него доступна только по http, вплоть до формы ввода логина/пароля. Соответственно на таких кривых сайтах нужно разрешать ту строку что без https. Но все что вы вводите по http легко может быть перехвачено и все серьезные сайты, особенно связанные с платежами/переводами, уже давно на https.
+  
+#####   Антизапрет уже вписан в настройках прокси, просто переключайтесь, при необходимости, на "Авто (proxi.pac)" в меню ПКМ кнопки Quick Toggle Settings. При перезагрузке состояние сбросится на "Системные (IE)" (настраивается в `user.js`, в начале секции "Другое").
+  
+#####   Linkifies Location Bar отключается в файле `.\profile\chrome\user_chrome_files\custom_scripts\CustomStylesScripts.jsm`, для этого закомментируйте в нем строку `{ path: "custom_js_win/dav_LinkifiesLocationBar.uc.js", ucfobj: false, },` т.е. поставьте в начале этой строки два прямых слэша "//".
+  
+#####   При использовании профиля вне сборки, в ядре Firefox должны присутствовать конфигурационные файлы, например, ucf версии 210928+.
+
+  
+### Использованные компоненты:
+
+<b>Темы, расширения, загрузчик скриптов, сами скрипты и стили, svg</b><br />
+<a href>https://github.com/VitaliyVstyle/VitaliyVstyle.github.io</a><br />
+из темы <a href>https://forum.mozilla-russia.org/viewforum.php?id=38</a><br />
+и из темы <a href>https://forum.mozilla-russia.org/viewtopic.php?id=76642</a><br />
+<br />
+<b>Скрипты и старый about:config</b><br />
+<a href>https://forum.mozilla-russia.org/profile.php?id=71856</a><br />
+из темы <a href>https://forum.mozilla-russia.org/viewforum.php?id=34</a><br />
+<br />
+<b>Скрипты и стили к ним</b><br />
+<a href>https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme</a><br />
+<a href>https://github.com/alice0775/userChrome.js</a><br />
+<a href>https://github.com/sdavidg/firefoxChromeScripts</a><br />
+<br />
+<b>Стили</b><br />
+<a href>https://forum.mozilla-russia.org/profile.php?id=99713</a><br />
+из темы <a href>https://forum.mozilla-russia.org/viewforum.php?id=38</a><br />
+<a href>https://www.userchrome.org/megabar-styling-firefox-address-bar.html</a><br />
+<a href>https://github.com/stonecrusher/simpleMenuWizard</a><br />
+<a href>https://github.com/Aris-t2/CustomCSSforFx</a><br />
+<a href>https://github.com/MrOtherGuy/firefox-csshacks</a><br />
+<a href>https://github.com/piroor/treestyletab/wiki/Code-snippets-for-custom-style-rules</a><br />
+Собственные стили, значки и модификации.<br />
+<br />
+<b>Расширения</b><br />
+<a href>https://addons.mozilla.org/ru/firefox/addon/add-last-active-class-to-tab/</a><br />
+<a href>https://addons.mozilla.org/ru/firefox/addon/clearurls/</a><br />
+<a href>https://addons.mozilla.org/ru/firefox/addon/link-text-and-location-copier/</a><br />
+<a href>https://addons.mozilla.org/ru/firefox/addon/noscript/</a><br />
+<a href>https://addons.mozilla.org/ru/firefox/addon/open-link-with-new-tab/</a><br />
+<a href>https://addons.mozilla.org/ru/firefox/addon/selection-context-search/</a><br />
+<a href>https://addons.mozilla.org/ru/firefox/addon/simple-translate/</a><br />
+<a href>https://addons.mozilla.org/ru/firefox/addon/smart-https-revived/</a><br />
+<a href>https://addons.mozilla.org/ru/firefox/addon/tab-unload-for-tree-style-tab/</a><br />
+<a href>https://addons.mozilla.org/ru/firefox/addon/temporary-containers/</a><br />
+<a href>https://addons.mozilla.org/ru/firefox/addon/textarea-cache/</a><br />
+<a href>https://addons.mozilla.org/ru/firefox/addon/tree-style-tab/</a><br />
+<a href>https://addons.mozilla.org/ru/firefox/addon/ublock-origin/</a><br />
+<a href>https://addons.mozilla.org/ru/firefox/addon/undo-closed-tabs-revived/</a><br />
+<a href>https://github.com/ettoolong/PopupWindow</a><br />
+<a href>https://github.com/Infocatcher/Link_Properties_Plus_WE</a><br />
+<a href>https://github.com/JustOff/scriptlet-doctor</a><br />
