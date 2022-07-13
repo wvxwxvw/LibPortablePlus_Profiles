@@ -16,11 +16,22 @@
      Перезагрузите браузер (например, кнопкой в левом нижнем углу окна)
      Тему включайте любую (в темных больше интересного)
   
-     Если хотите пользоваться TST то:
-        Включите все отключенные расширения
-        Раскомментируйте 18-ю строку в файле
-        `.\profile\chrome\user_chrome_files\custom_scripts\custom_js\ToggleNativeTabs_ucf.js`
-        или раскомментируйте в userChrome.css импорт стиля скрытия панели вкладок
+     Если не хотите пользоваться TST то:
+        Отключите/удалите все расширения с TST в имени
+     Удалите строку с 'ToggleNativeTabs_ucf.js' в
+       .\profile\chrome\user_chrome_files\custom_scripts\CustomStylesScripts.jsm
+     и секции с 'UCF_TST_TabPreview.jsm' и 'UCF_TST_TabPreview.jsm' в
+       .\profile\chrome\user_chrome_files\custom_scripts\custom_js\UCF_JSM_Loader.js
+
+     Если хотите пользоваться TST без панели нативных вкладок то:
+       Закомментируйте строку с ToggleNativeTabs_ucf.js в
+         .\profile\chrome\user_chrome_files\custom_scripts\CustomStylesScripts.jsm
+       и раскомментируйте в userChrome.css импорт стиля скрытия панели вкладок.
+       Или, если хотите иметь быстрый доступ к нативным вкладкам, просто раскомментируйте
+       18-ю строку в файле
+         .\profile\chrome\user_chrome_files\custom_scripts\custom_js\ToggleNativeTabs_ucf.js
+       но тогда панель, при открытии дополнительных окон, будет самопроизвольно появлятся и ее
+       придется закрывать вручную соответствующей кнопкой
   
      Если не нужна очистка при закрытии, переопределите это в меню ЛКМ
      кнопки Quick Toggle Settings, верхняя синяя кнопка на панели слева
